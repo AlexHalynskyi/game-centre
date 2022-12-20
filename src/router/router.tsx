@@ -10,13 +10,13 @@ import {
   PEOPLE_PATH,
 } from './route-types';
 
-const Home = lazy(() => import('../pages/Home'));
-const SignIn = lazy(() => import('../pages/SignIn'));
-const SignUp = lazy(() => import('../pages/SignUp'));
-const Profile = lazy(() => import('../pages/Profile'));
-const Games = lazy(() => import('../pages/Games'));
-const Game = lazy(() => import('../pages/Game'));
-const People = lazy(() => import('../pages/People'));
+const Home = lazy(() => import('@/pages/Home'));
+const SignIn = lazy(() => import('@/pages/SignIn'));
+const SignUp = lazy(() => import('@/pages/SignUp'));
+const Profile = lazy(() => import('@/pages/Profile'));
+const Games = lazy(() => import('@/pages/Games'));
+const Game = lazy(() => import('@/pages/Game'));
+const People = lazy(() => import('@/pages/People'));
 
 export const router = createBrowserRouter([
   {
