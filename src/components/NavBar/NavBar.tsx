@@ -1,11 +1,11 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import { useAuthState } from 'react-firebase-hooks/auth';
+import { getAuth } from 'firebase/auth';
 import { SIGN_IN_PATH } from '@/router';
-import { Context } from '@/auth';
 
 const NavBar = () => {
-  const { auth } = useContext(Context);
+  const auth = getAuth();
   const [user] = useAuthState(auth);
 
   return (

@@ -1,21 +1,28 @@
-import React, { useContext } from 'react';
-import firebase from 'firebase/compat/app';
-import { Context } from '@/auth';
+import React from 'react';
+import { useNavigate } from 'react-router-dom';
+import {
+  getAuth,
+  signInWithPopup,
+  GoogleAuthProvider,
+  GithubAuthProvider
+} from 'firebase/auth';
+import { HOME_PATH } from '@/router';
 
 const authProviders = {
-  'Google': firebase.auth.GoogleAuthProvider,
-  'GitHub': firebase.auth.GithubAuthProvider,
+  'Google': GoogleAuthProvider,
+  'GitHub': GithubAuthProvider,
 };
 
 const availableMethods = ['Google', 'GitHub'];
 
 const SignInSocial = () => {
-  const { auth } = useContext(Context);
+  const auth  = getAuth();
+  const navigate = useNavigate();
 
   const signIn = async (method: string) => {
     const provider = new authProviders[method as keyof typeof authProviders];
-    const { user } = await auth.signInWithPopup(provider);
-    console.log(user);
+    await signInWithPopup(auth, provider);
+    navigate(HOME_PATH);
   };
 
   return (

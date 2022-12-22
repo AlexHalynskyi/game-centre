@@ -2,8 +2,7 @@ import { Suspense } from 'react';
 import { RouterProvider } from 'react-router-dom';
 import { router } from '@/router';
 import { Loader } from '@/components';
-import { Context } from '@/auth';
-import { useFirebase } from '@/auth';
+import { Context, useFirebase } from '@/auth';
 
 function App() {
   return (
