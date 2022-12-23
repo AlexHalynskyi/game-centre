@@ -2,7 +2,7 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import { getAuth, createUserWithEmailAndPassword } from 'firebase/auth';
-import { validationSchema } from '@/pages/SignUp';
+import { signUpSchema } from '@/pages/SignUp';
 import { HOME_PATH } from '@/router';
 
 const SignUp = () => {
@@ -17,7 +17,7 @@ const SignUp = () => {
   return (
     <Formik
       initialValues={{ email: '', password: '', repeatPassword: '' }}
-      validationSchema={validationSchema}
+      validationSchema={signUpSchema}
       onSubmit={({ email, password }) => submitHandler(email, password)}
     >
       <Form>

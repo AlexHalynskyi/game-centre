@@ -1,10 +1,9 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import { createContext } from 'react';
 import firebase from 'firebase/compat/app';
 import 'firebase/compat/auth';
 import 'firebase/compat/firestore';
 
-export const Context = createContext<any>(null);
+export const Context = createContext({});
 
 const firebaseConfig = {
   apiKey: "AIzaSyDXAwBhfr6pP0vtt-8YEN4rapmw7MWQA3M",

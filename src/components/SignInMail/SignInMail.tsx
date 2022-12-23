@@ -5,7 +5,7 @@ import {
 } from 'firebase/auth';
 import { useNavigate } from 'react-router-dom';
 import { ErrorMessage, Field, Form, Formik } from 'formik';
-import { validationSchema } from '@/components/SignInMail';
+import { signInSchema } from '@/components/SignInMail';
 import { HOME_PATH } from '@/router';
 
 const SignInMail = () => {
@@ -24,7 +24,7 @@ const SignInMail = () => {
   return (
     <Formik
       initialValues={{ email: '', password: '' }}
-      validationSchema={validationSchema}
+      validationSchema={signInSchema}
       onSubmit={({ email, password }) => signIn(email, password)}
     >
       <Form>
