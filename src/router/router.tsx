@@ -18,33 +18,40 @@ const Games = lazy(() => import('@/pages/Games'));
 const Game = lazy(() => import('@/pages/Game'));
 const People = lazy(() => import('@/pages/People'));
 
+const AppLayout = lazy(() => import('../components/Layouts'));
+
 export const router = createBrowserRouter([
   {
-    path: HOME_PATH,
-    element: <Home />,
-  },
-  {
-    path: SIGN_IN_PATH,
-    element: <SignIn />,
-  },
-  {
-    path: SIGN_UP_PATH,
-    element: <SignUp />,
-  },
-  {
-    path: PROFILE_PATH,
-    element: <Profile />,
-  },
-  {
-    path: GAMES_PATH,
-    element: <Games />,
-  },
-  {
-    path: GAME_PATH,
-    element: <Game />,
-  },
-  {
-    path: PEOPLE_PATH,
-    element: <People />,
+    element: <AppLayout />,
+    children: [
+      {
+        path: HOME_PATH,
+        element: <Home />,
+      },
+      {
+        path: SIGN_IN_PATH,
+        element: <SignIn />,
+      },
+      {
+        path: SIGN_UP_PATH,
+        element: <SignUp />,
+      },
+      {
+        path: PROFILE_PATH,
+        element: <Profile />,
+      },
+      {
+        path: GAMES_PATH,
+        element: <Games />,
+      },
+      {
+        path: GAME_PATH,
+        element: <Game />,
+      },
+      {
+        path: PEOPLE_PATH,
+        element: <People />,
+      },
+    ]
   },
 ]);
