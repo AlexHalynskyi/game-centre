@@ -6,14 +6,14 @@ import 'firebase/compat/firestore';
 export const Context = createContext({});
 
 const firebaseConfig = {
-  apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
-  authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
-  databaseURL: process.env.REACT_APP_FIREBASE_DATABASE_URL,
-  projectId: process.env.REACT_APP_FIREBASE_PROJECT_ID,
-  storageBucket: process.env.REACT_APP_FIREBASE_STORAGE_BUCKET,
-  messagingSenderId: process.env.REACT_APP_FIREBASE_MESSAGING_SENDER_ID,
-  appId: process.env.REACT_APP_FIREBASE_APP_ID,
-  measurementId: process.env.REACT_APP_FIREBASE_MEASUREMENT_ID
+  apiKey: "AIzaSyDXAwBhfr6pP0vtt-8YEN4rapmw7MWQA3M",
+  authDomain: "game-centre-67e49.firebaseapp.com",
+  databaseURL: "https://game-centre-67e49-default-rtdb.europe-west1.firebasedatabase.app",
+  projectId: "game-centre-67e49",
+  storageBucket: "game-centre-67e49.appspot.com",
+  messagingSenderId: "785403291451",
+  appId: "1:785403291451:web:97ad20cd039dd65a67f91e",
+  measurementId: "G-LN2Q2EWJ8V"
 };
 
 firebase.initializeApp(firebaseConfig);
