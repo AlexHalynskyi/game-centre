@@ -3,6 +3,10 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { browserSessionPersistence, getAuth, setPersistence } from 'firebase/auth';
+
+const auth = getAuth();
+setPersistence(auth, browserSessionPersistence);
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
