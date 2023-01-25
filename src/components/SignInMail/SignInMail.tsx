@@ -9,7 +9,7 @@ import { ErrorMessage, Field, Form, Formik } from 'formik';
 import { signInSchema } from '@/components/SignInMail';
 import { HOME_PATH } from '@/router';
 import { setUser } from '@/store/slices/userSlice';
-import { useAppDispatch } from '@/hooks/redux-hooks';
+import { useAppDispatch } from '@/hooks';
 
 const SignInMail = () => {
   const dispatch = useAppDispatch();

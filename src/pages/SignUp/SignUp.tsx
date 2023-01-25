@@ -6,7 +6,7 @@ import { getAuth, createUserWithEmailAndPassword } from 'firebase/auth';
 import { signUpSchema } from '@/pages/SignUp';
 import { HOME_PATH } from '@/router';
 import { setUser } from '@/store/slices/userSlice';
-import { useAppDispatch } from '@/hooks/redux-hooks';
+import { useAppDispatch } from '@/hooks';
 
 const SignUp = () => {
   const dispatch = useAppDispatch();

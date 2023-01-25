@@ -1,6 +1,6 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
-import { useAppSelector } from '@/hooks/redux-hooks';
+import { useAppSelector } from '@/hooks';
 
 const Game = () => {
   const { gameId } = useParams();
