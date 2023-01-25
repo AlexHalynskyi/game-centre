@@ -1,5 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useCookies } from 'react-cookie';
 import {
   getAuth,
   signInWithPopup,
@@ -7,6 +8,8 @@ import {
   GithubAuthProvider
 } from 'firebase/auth';
 import { HOME_PATH } from '@/router';
+import { setUser } from '@/store/slices/userSlice';
+import { useAppDispatch } from '@/hooks/redux-hooks';
 
 const authProviders = {
   'Google': GoogleAuthProvider,
@@ -16,12 +19,21 @@ const authProviders = {
 const availableMethods = ['Google', 'GitHub'];
 
 const SignInSocial = () => {
+  const dispatch = useAppDispatch();
+  const [, setCookie] = useCookies<string>([]);
   const auth  = getAuth();
   const navigate = useNavigate();
 
   const signIn = async (method: string) => {
     const provider = new authProviders[method as keyof typeof authProviders];
-    await signInWithPopup(auth, provider);
+    const { user } = await signInWithPopup(auth, provider);
+    const token = await user.getIdToken();
+    dispatch(setUser({
+      email: user.email,
+      id: user.uid,
+      token,
+    }));
+    setCookie('accessToken', token);
     navigate(HOME_PATH);
   };
 
